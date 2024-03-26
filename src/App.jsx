@@ -11,8 +11,8 @@ function App() {
       <SideBar />
       <h1>Entertainment App</h1> */}
       <div className="testing">
-        {/* <Card /> */}
-        <TrendingCard />
+        <Card />
+        {/* <TrendingCard /> */}
       </div>
     </>
   );
