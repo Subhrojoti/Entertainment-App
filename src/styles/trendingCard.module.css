@@ -1,0 +1,102 @@
+.card {
+  width: 370px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cardBody {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  position: absolute;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  transition: right 0.3s ease; /* Add transition for smooth animation */
+}
+
+.card:hover .cardBody {
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.295);
+  backdrop-filter: blur(0.5px);
+}
+
+.iconStyle {
+  background-color: rgba(255, 255, 255, 0.219);
+  height: 45px;
+  width: 110px;
+  display: none; /* Initially hide iconStyle */
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+}
+
+.card:hover .iconStyle,
+.card:hover .playIcon {
+  display: flex; /* Show iconStyle and play icon during hover */
+}
+
+.playIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Initially hide the play icon */
+  font-size: 30px;
+}
+
+.playText {
+  font-size: 20px;
+  font-family: jost;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  color: white;
+  font-family: jost;
+}
+
+.content {
+  display: flex;
+  color: #c3c4c7;
+  font-size: 13px;
+}
+
+.dot {
+  margin-left: 4px;
+  margin-right: 4px;
+  display: inline-flex;
+  -webkit-text-security: disc;
+  font-weight: 700;
+}
+
+.movieName {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(255, 253, 253);
+}
+
+.dynamicIcon {
+  display: flex;
+  align-items: center;
+}

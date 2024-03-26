@@ -20,11 +20,13 @@ input {
   color: white;
   border-bottom: 2px solid transparent; /* Initially transparent */
   transition: border-color 0.3s ease; /* Transition for border color */
+  caret-color: #FC4747;
+  
 }
 
 input:focus {
   outline: none;
-  border-color: white; /* Change border color on focus */
+  border-color: #3a445e; /* Change border color on focus */
   border-width: 0 0 2px; /* Only add bottom border on focus */
   width: 100%; /* Make the width 100% when focused */
 }
