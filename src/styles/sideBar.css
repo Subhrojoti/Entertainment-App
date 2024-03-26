@@ -1,0 +1,42 @@
+nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 80px;
+  height: 100vh;
+  background-color: #161d2f;
+  border-radius: 12px;
+}
+
+.logo{
+  color: #FC4747;
+  margin-top: 24px;
+  font-size: 30px;
+}
+
+li{
+  list-style: none;
+  color: #5A698F;
+  font-size: 24px;
+  margin-top: 24px;
+}
+
+.nav-icons{
+  height: 75vh;
+}
+
+.account{
+  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+  font-size: 37px;
+  color: #5A698F;
+}
+
+li :hover{
+  color: white;
+  cursor: pointer;
+}
