@@ -1,30 +1,51 @@
-
 * {
-    background-color: #10141E;
-  }
-  
-  .moviesPage {
-    display: flex;
-  }
-  
-  .sideBar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 80px;
-    height: 100vh;
-    background-color: #161d2f;
-    border-radius: 12px;
-    margin-top: 2rem;
-    margin-left: 2rem;
-    margin-bottom: 20rem;
-  }
-  
-  .searchBar {
-    margin-left: 1rem;
-    display: flex;
-    margin-top: 3.1rem;
-    width: 100rem;
-  }
-  
+  background-color: #10141e;
+  font-family: jost;
+}
+
+.moviesPage {
+  display: flex;
+}
+
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 80px;
+  height: 100vh;
+  background-color: #161d2f;
+  border-radius: 12px;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 20rem;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.searchBar {
+  display: flex;
+  margin-top: 3.1rem;
+  width: 100%;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1rem;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.heading {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: light;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}

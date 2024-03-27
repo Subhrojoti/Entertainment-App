@@ -4,7 +4,7 @@ import SideBar from "./SideBar";
 import "../styles/moviesPage.css";
 import Card from "./Card";
 
-const MoviesPage = () => {
+const TvSeriesPage = () => {
   return (
     <div className="moviesPage">
       <div className="sideBar">
@@ -12,10 +12,10 @@ const MoviesPage = () => {
       </div>
       <div className="mainContent">
       <div className="searchBar">
-        <SearchBar placeholder="Search for movies" />
+        <SearchBar placeholder="Search for TV Series" />
       </div>
       <div className="heading">
-        Movies
+        TV Series
       </div>
       <div className="card-container">
         <Card />
@@ -36,4 +36,4 @@ const MoviesPage = () => {
   );
 };
 
-export default MoviesPage;
+export default TvSeriesPage;
