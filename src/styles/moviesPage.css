@@ -1,0 +1,30 @@
+
+* {
+    background-color: #10141E;
+  }
+  
+  .moviesPage {
+    display: flex;
+  }
+  
+  .sideBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+    height: 100vh;
+    background-color: #161d2f;
+    border-radius: 12px;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 20rem;
+  }
+  
+  .searchBar {
+    margin-left: 1rem;
+    display: flex;
+    margin-top: 3.1rem;
+    width: 100rem;
+  }
+  
