@@ -1,0 +1,55 @@
+.main {
+  background-color: #10141e;
+  display: flex;
+}
+
+.sideBar {
+  margin-left: 30px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBar {
+  width: 600px;
+}
+
+.content {
+  margin-left: 40px;
+  margin-top: 37px;
+  overflow-x: hidden;
+}
+
+.trendingtxt h1 {
+  margin-top: 30px;
+  font-family: jost;
+  font-weight: 300;
+  font-size: 30px;
+  color: #ededee;
+}
+
+.trendingCard {
+  display: flex;
+  margin-top: 20px;
+  max-width: 1791px;
+}
+
+.individualCard {
+  margin-right: 20px;
+}
+
+.recforyoutxt h2 {
+  color: #ededee;
+  margin-top: 30px;
+  margin-bottom: 29px;
+  font-family: jost;
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.recforyouTrendingCard {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Display 4 cards horizontally */
+  grid-gap: 10px; /* Adjust gap between cards as needed */
+}
