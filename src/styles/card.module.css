@@ -17,6 +17,8 @@
   right: 10px;
   color: #fff;
   font-size: large;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 100px;
 }
 
 .bookmarkShadow {

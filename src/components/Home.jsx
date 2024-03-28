@@ -6,7 +6,7 @@ import SideBar from "./SideBar";
 import TrendingCard from "./TrendingCard";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
-const Home = () => {
+const Home = ({ placeholder }) => {
   const slideLeft = () => {
     var slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft - 500;
@@ -23,7 +23,7 @@ const Home = () => {
       </section>
       <section className={home.content}>
         <div className={home.searchBar}>
-          <SearchBar />
+          <SearchBar placeholder="Search for movies and TV Series" />
         </div>
         <div className={home.trending}>
           <div className={home.trendingtxt}>

@@ -11,7 +11,7 @@ const TrendingCard = () => {
       <div className={trendingCardcss.cardBody}>
         <div className={trendingCardcss.iconStyle}>
           <div className={trendingCardcss.playIcon}>
-            <FaCirclePlay />
+            <FaCirclePlay className={trendingCardcss.transparentIcon} />
             <p className={trendingCardcss.playText}>Play</p>
           </div>
         </div>
