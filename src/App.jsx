@@ -1,6 +1,5 @@
 import "./App.css";
 import Card from "./components/Card";
-import MoviesPage from "./components/MoviesPage";
 import SearchBar from "./components/SearchBar";
 import SideBar from "./components/SideBar";
 import TrendingCard from "./components/TrendingCard";
@@ -18,7 +17,7 @@ function App() {
       {/* <TrendingCard /> */}
       {/* </div> */}
       {/* <DetailsPage /> */}
-      <Home placeholder="Search for movies" />
+      <Home />
     </>
   );
 }
