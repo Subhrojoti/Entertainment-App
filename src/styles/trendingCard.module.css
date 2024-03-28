@@ -31,8 +31,7 @@
 
 .card:hover .cardBody {
   right: 0;
-  background-color: rgba(0, 0, 0, 0.295);
-  backdrop-filter: blur(0.5px);
+  background-color: rgba(0, 0, 0, 0.39);
 }
 
 .iconStyle {

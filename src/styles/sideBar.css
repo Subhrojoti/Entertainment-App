@@ -1,42 +1,47 @@
-nav{
+nav {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 80px;
-  height: 100vh;
+  height: 92vh;
   background-color: #161d2f;
   border-radius: 12px;
 }
 
-.logo{
-  color: #FC4747;
+.logo {
+  color: #fc4747;
   margin-top: 24px;
   font-size: 30px;
 }
 
-li{
+li {
   list-style: none;
-  color: #5A698F;
+  color: #5a698f;
   font-size: 24px;
-  margin-top: 24px;
+  margin-top: 30px;
 }
 
-.nav-icons{
+.nav-icons {
   height: 75vh;
 }
 
-.account{
+.account {
   height: 5vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   margin-bottom: 24px;
   font-size: 37px;
-  color: #5A698F;
+  color: #5a698f;
 }
 
-li :hover{
+li :hover {
+  color: white;
+  cursor: pointer;
+}
+
+.account:hover {
   color: white;
   cursor: pointer;
 }

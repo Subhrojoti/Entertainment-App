@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import demoPic from "../assets/demoPic.jpg";
 import { MdLocalMovies, MdBookmark, MdBookmarkBorder } from "react-icons/md";
@@ -16,9 +15,15 @@ const Card = () => {
       <div className={card.cardContainer}>
         <div className={card.imageContainer}>
           {isBookmarked ? (
-            <MdBookmark className={card.bookmarkIcon} onClick={toggleBookmark} />
+            <MdBookmark
+              className={card.bookmarkIcon}
+              onClick={toggleBookmark}
+            />
           ) : (
-            <MdBookmarkBorder className={card.bookmarkIcon} onClick={toggleBookmark} />
+            <MdBookmarkBorder
+              className={card.bookmarkIcon}
+              onClick={toggleBookmark}
+            />
           )}
           <img src={demoPic} alt="img" />
         </div>
