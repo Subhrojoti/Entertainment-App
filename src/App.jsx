@@ -4,7 +4,7 @@ import MoviesPage from "./components/MoviesPage";
 import SearchBar from "./components/SearchBar";
 import SideBar from "./components/SideBar";
 import TrendingCard from "./components/TrendingCard";
-// import TvSeriesPage from "./components/TvSeriesPage";
+import TvSeriesPage from "./components/TvSeriesPage";
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
         <TrendingCard />
       </div> */}
 
- <MoviesPage />
- {/* <TvSeriesPage /> */}
+ {/* <MoviesPage /> */}
+ <TvSeriesPage />
     </>
   );
 }
