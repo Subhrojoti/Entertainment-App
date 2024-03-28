@@ -19,7 +19,8 @@ function App() {
       {/* <DetailsPage /> */}
       <Home />
     </>
-  );
-}
+
+
 
 export default App;
+
