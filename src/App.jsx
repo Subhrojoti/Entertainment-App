@@ -18,7 +18,6 @@ function App() {
       {/* </div> */}
       {/* <DetailsPage /> */}
       <Home />
-      <Home />
     </>
   );
 }
