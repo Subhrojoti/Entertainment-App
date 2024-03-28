@@ -4,11 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        "custom-gray":"#161D2f"
-      }
+        "custom-gray": "#161D2f",
+        "custom-background": "#10141e",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
 };
-}
-

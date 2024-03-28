@@ -5,6 +5,7 @@ import SideBar from "./components/SideBar";
 import TrendingCard from "./components/TrendingCard";
 import Home from "./components/Home";
 import DetailsPage from "./components/DetailsPage";
+import LoginSignUp from "./components/LoginSignUp";
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
       {/* <TrendingCard /> */}
       {/* </div> */}
       {/* <DetailsPage /> */}
-      <Home />
+      {/* <Home /> */}
+
+      <LoginSignUp />
     </>
   );
 }
