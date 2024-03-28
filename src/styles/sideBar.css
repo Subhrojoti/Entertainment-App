@@ -24,6 +24,15 @@ li{
 
 .nav-icons{
   height: 75vh;
+  background-color: #161d2f;
+  
+}
+
+.icon-wrapper{
+  background-color: #161d2f;
+}
+.icon{
+  background-color: #161d2f;
 }
 
 .account{
@@ -34,6 +43,7 @@ li{
   margin-bottom: 24px;
   font-size: 37px;
   color: #5A698F;
+  background-color: #161d2f
 }
 
 li :hover{

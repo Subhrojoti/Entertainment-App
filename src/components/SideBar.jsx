@@ -11,24 +11,36 @@ const SideBar = () => {
   return (
     <nav>
       <div className="logo">
-        <MdMovie />
+      <div className="icon-wrapper">
+        <MdMovie className="icon"/>
+        </div>
       </div>
       <ul className="nav-icons">
         <li>
-          <IoMdHome />
+          <div className="icon-wrapper">
+          <IoMdHome className="icon" />
+          </div>
         </li>
         <li>
-          <MdLocalMovies />
+        <div className="icon-wrapper">
+          <MdLocalMovies className="icon"/>
+          </div>
         </li>
         <li>
-          <TbDeviceTvOld />
+        <div className="icon-wrapper">
+          <TbDeviceTvOld className="icon"/>
+          </div>
         </li>
         <li>
-          <IoBookmark />
+        <div className="icon-wrapper">
+          <IoBookmark className="icon"/>
+          </div>
         </li>
       </ul>
+      <div className="icon-wrapper">
       <div className="account">
-        <CgProfile />
+        <CgProfile className="icon"/>
+      </div>
       </div>
     </nav>
   );
