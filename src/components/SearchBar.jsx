@@ -2,11 +2,14 @@ import React from "react";
 import { IoSearch } from "react-icons/io5";
 import "../styles/searchBar.css";
 
-const SearchBar = () => {
+const SearchBar = ({ placeholder }) => {
   return (
     <div className="input-wrapper">
       <IoSearch id="search-icon" />
-      <input placeholder="Search for movies or TV series" />
+      <input
+      type="text"
+      placeholder={placeholder}
+    />
     </div>
   );
 };
