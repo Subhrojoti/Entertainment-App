@@ -17,10 +17,8 @@ function App() {
         <Card /> */}
       {/* <TrendingCard /> */}
       {/* </div> */}
-      {/* <DetailsPage /> */}
-      {/* <Home /> */}
-
-      <LoginSignUp />
+      <DetailsPage />
+      {/* <LoginSignUp /> */}
     </>
   );
 }
