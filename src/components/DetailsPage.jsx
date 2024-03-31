@@ -74,7 +74,7 @@ const DetailsPage = () => {
               return (
                 <p
                   key={i}
-                  className="bg-white text-custom-background p-px px-1 border rounded-lg font-bold"
+                  className="bg-white text-custom-background p-px px-3 border rounded-lg font-bold"
                 >
                   {items}
                 </p>
@@ -118,7 +118,7 @@ const DetailsPage = () => {
             <FaLink />
           </a>
           <a
-            href="https://www.imdb.com"
+            href="https://www.imdb .com"
             target="_blank"
             className="flex items-center gap-12 bg-custom-button p-4 w-48 justify-center rounded-md"
           >
