@@ -18,6 +18,7 @@ function App() {
         <Route path="/detail/:movieid/:mediatype" element={<DetailsPage />} />
         <Route path="/signup" element={<LoginSignUp isSignUp={true} />} />
         <Route path="/login" element={<LoginSignUp isSignUp={false} />} />
+        
       </Routes>
     </>
   );
