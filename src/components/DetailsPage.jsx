@@ -1,61 +1,106 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import detailsPic from "../assets/details.jpg";
 import Stars from "./Stars";
 import { FaLink } from "react-icons/fa";
 import { FaImdb } from "react-icons/fa";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const DetailsPage = () => {
+  const params = useParams();
+  const [content, setContent] = useState({});
+  const [credits, setCredits] = useState([]); // pass the array to get the data
+  const [genres, setGenres] = useState([]); // pass the array to get the data
+
+  const id = params.movieid || "";
+  const _media_type = params.mediatype || "";
+
+  const API_Key = "&api_key=f69acf74b5c812b81e0ece6ad96116a1";
+  const base_url = "https://api.themoviedb.org/3";
+
+  const fetchData = async () => {
+    try {
+      const { data } = await axios.get(
+        `${base_url}/${_media_type}/${id}?${API_Key}&language=en-US`
+      );
+      setContent(data);
+      setGenres(data.genres);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const creditsFetch = async () => {
+    try {
+      const { data } = await axios.get(
+        `${base_url}/${_media_type}/${id}/credits?${API_Key}`
+      );
+      setCredits(data.cast);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+    creditsFetch();
+  }, [_media_type, id]);
+
+  useEffect(
+    () => {
+      // For testing Data
+      // console.log(content);
+      // console.log(credits);
+      // console.log(genres);
+    },
+    [content],
+    [credits],
+    [genres]
+  );
+
+  const poster = `${content.poster_path}`;
+  const img = `https://image.tmdb.org/t/p/w500${poster}`;
+  const title = content.original_name || content.original_title;
+
   const movieInfo = [
     {
       category: "Length",
-      value: "88 min.",
+      value: content && content.runtime ? content.runtime + " min." : "N/A",
     },
     {
-      category: "Langauge",
-      value: "English",
+      category: "Language",
+      value:
+        content &&
+        content.spoken_languages &&
+        content.spoken_languages.length > 0
+          ? content.spoken_languages[0].english_name
+          : "N/A",
     },
     {
       category: "Year",
-      value: 2023,
+      value:
+        content && (content.release_date || content.first_air_date)
+          ? (content.release_date || content.first_air_date).slice(0, 4)
+          : "N/A",
     },
     {
       category: "Status",
-      value: "N/A",
+      value: `${content.status}`,
     },
   ];
 
-  const genres = ["Documentory", "History"];
-  const cast = [
-    "Cillian Murphy",
-    "Emily Blunt",
-    "Robert Downey Jr.",
-    "Matt Damon",
-    "Rami Malek",
-    "Benedict Cumberbatch",
-    "Sam Rockwell",
-    "Rebecca Hall",
-    "Josh Brolin",
-    "Jake Gyllenhaal",
-    "Natalie Portman",
-    "Tom Hardy",
-    "Viola Davis",
-    "Michael Fassbender",
-    "Charlize Theron",
-    "Oscar Isaac",
-    "Emma Stone",
-    "Mark Ruffalo",
-  ];
   return (
     <div className="main flex flex-row bg-custom-background pt-12">
       <div className="poster w-1/3 flex items-start h-screen justify-center ">
-        <img src={detailsPic} className="w-96 rounded-lg" />
+        <img src={img} className="w-96 rounded-lg" />
       </div>
       <div className="overview w-2/3 text-white font-normal flex flex-col gap-7">
-        <h3 className="text-6xl">
-          The End All War : Oppenheimer & the Atomic Bomb
-        </h3>
+        <h3 className="text-6xl">{title}</h3>
         <div className="stars">
-          <Stars stars="4.5" numbers="4.5" />
+          <Stars
+            stars={(content.vote_average / 2).toFixed(1)}
+            numbers={(content.vote_average / 2).toFixed(1)}
+          />
         </div>
         <div className="movie-info flex gap-56 ">
           {movieInfo.map((items, i) => {
@@ -76,7 +121,7 @@ const DetailsPage = () => {
                   key={i}
                   className="bg-white text-custom-background p-px px-3 border rounded-lg font-bold"
                 >
-                  {items}
+                  {items.name}
                 </p>
               );
             })}
@@ -84,46 +129,38 @@ const DetailsPage = () => {
         </div>
         <div className="Synopsis flex flex-col gap-2">
           <p className="font-bold">Synopsis</p>
-          <p className="text-lg pr-3">
-            Oppenheimer" is a gripping drama that chronicles the life of J.
-            Robert Oppenheimer, the brilliant physicist behind the development
-            of the atomic bomb during World War II. The film explores his
-            pivotal role in the Manhattan Project, his ethical dilemmas, and his
-            relationships with colleagues. It offers a compelling portrayal of
-            Oppenheimer's complex character and the moral complexities of
-            scientific innovation.
-          </p>
+          <p className="text-lg pr-3">{content.overview}</p>
         </div>
         <div className="casts flex flex-col gap-2">
           <p className="font-bold">Casts</p>
           <div className="flex flex-wrap gap-2">
-            {cast.map((items, i) => (
+            {credits.map((items, i) => (
               <p
                 key={i}
                 className="border border-white rounded-lg p-px px-2 font-bold"
               >
-                {items}
+                {items.name}
               </p>
             ))}
           </div>
         </div>
         <div className="link flex gap-6 mt-14">
           <a
-            href="https://www.google.com"
+            href={content.homepage}
             target="_blank"
             className="flex items-center gap-6 
           bg-custom-button p-4 w-48 justify-center rounded-md"
           >
-            <p className="font-bold">Website</p>
-            <FaLink />
+            <p className="font-bold bg-red-500 bg-opacity-0">Website</p>
+            <FaLink className="bg-red-500 bg-opacity-0" />
           </a>
           <a
-            href="https://www.imdb .com"
+            href={`https://www.imdb.com/title/${content.imdb_id}`}
             target="_blank"
             className="flex items-center gap-12 bg-custom-button p-4 w-48 justify-center rounded-md"
           >
-            <p className="font-bold">IMDB</p>
-            <FaImdb />
+            <p className="font-bold bg-red-500 bg-opacity-0">IMDB</p>
+            <FaImdb className="bg-red-500 bg-opacity-0" />
           </a>
         </div>
       </div>
