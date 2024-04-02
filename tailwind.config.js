@@ -6,6 +6,7 @@ export default {
       colors: {
         "custom-gray": "#161D2f",
         "custom-background": "#10141e",
+        "custom-button": "#5a6b90",
       },
     },
   },
