@@ -92,6 +92,7 @@ const LoginSignUp = () => {
             setEmail("");
             setPassword("");
             // Handle successful login (e.g., redirect user)
+            
 
           } else {
             const data = await response.json();
