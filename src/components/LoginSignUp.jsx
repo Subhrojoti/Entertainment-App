@@ -65,6 +65,7 @@ const LoginSignUp = () => {
             setPassword("");
             setRepeatPassword("");
             // Handle successful signup (e.g., redirect user)
+            
           } else {
             const data = await response.json();
             if (data.message) {
@@ -91,6 +92,7 @@ const LoginSignUp = () => {
             setEmail("");
             setPassword("");
             // Handle successful login (e.g., redirect user)
+
           } else {
             const data = await response.json();
             console.error("Login failed:", data.message);
