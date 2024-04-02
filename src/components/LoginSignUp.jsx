@@ -117,11 +117,11 @@ const LoginSignUp = () => {
       </div>
 
       <div
-        className="w-96 bg-custom-gray from-gray-900 to-gray-700 p-8 rounded-2xl"
+        className="w-96 bg-custom-gray from-gray-900 to-gray-700 p-8 rounded-2xl "
         style={{ width: "450px" }}
       >
-        <form onSubmit={handleSubmit}>
-          <h1 className="text-3xl text-white font-light text-left mb-8">
+        <form onSubmit={handleSubmit} className="bg-custom-gray">
+          <h1 className="text-3xl text-white font-light text-left mb-8 bg-custom-gray">
             {isSignUp ? "Sign Up" : "Login"}
           </h1>
           <div
@@ -138,14 +138,14 @@ const LoginSignUp = () => {
               className="w-full h-full bg-transparent border-none outline-none ml-4 caret-red-500 text-white text-lg font-light pr-10"
             />
             {errors.email && (
-              <span className="text-red-500 absolute top-8 right-0 text-xs transform -translate-y-full">
+              <span className="text-red-500 absolute top-8 right-0 text-xs transform -translate-y-full ">
                 {errors.email}
               </span>
             )}
           </div>
 
           <div
-            className={`focus-within:border-white relative w-full h-12 mb-8 border-b border-gray-600 transition-all ${
+            className={`focus-within:border-white relative w-full h-12 mb-8 border-b border-gray-600 transition-all bg-custom-gray ${
               errors.password ? "border-red-500" : ""
             }`}
           >
@@ -155,7 +155,7 @@ const LoginSignUp = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               onFocus={handleInputFocus}
-              className="w-full h-full bg-transparent border-none outline-none ml-4 caret-red-500 text-white text-lg font-light pr-10"
+              className="w-full h-full bg-transparent border-none outline-none ml-4 caret-red-500 text-white text-lg font-light pr-10 "
             />
             {errors.password && (
               <span className="text-red-500 absolute top-8 right-0 text-xs transform -translate-y-full">
@@ -179,7 +179,7 @@ const LoginSignUp = () => {
                 className="w-full h-full bg-transparent border-none outline-none ml-4 caret-red-500 text-white text-lg font-light pr-10"
               />
               {errors.repeatPassword && (
-                <span className="text-red-500 absolute top-8 right-0 text-xs transform -translate-y-full">
+                <span className="text-red-500 absolute top-8 right-0 text-xs transform -translate-y-full ">
                   {errors.repeatPassword}
                 </span>
               )}
