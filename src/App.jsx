@@ -1,3 +1,5 @@
+
+import React from "react";
 import "./App.css";
 import Home from "./components/Home";
 import DetailsPage from "./components/DetailsPage";
@@ -7,6 +9,7 @@ import MoviesPage from "./components/MoviesPage";
 import TvSeriesPage from "./components/TvSeriesPage";
 function App() {
   return (
+
     <>
       <Routes>
         <Route path="/" element={<Home />} />
