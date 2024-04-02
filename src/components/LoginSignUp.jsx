@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { MdMovie } from "react-icons/md";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
+
 const LoginSignUp = () => {
-  const [isSignUp, setIsSignUp] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
@@ -64,8 +67,7 @@ const LoginSignUp = () => {
             setEmail("");
             setPassword("");
             setRepeatPassword("");
-            // Handle successful signup (e.g., redirect user)
-            
+            setIsSignUp(false);
           } else {
             const data = await response.json();
             if (data.message) {
@@ -92,7 +94,7 @@ const LoginSignUp = () => {
             setEmail("");
             setPassword("");
             // Handle successful login (e.g., redirect user)
-
+            window.location.href = "/"; 
           } else {
             const data = await response.json();
             console.error("Login failed:", data.message);
@@ -111,13 +113,15 @@ const LoginSignUp = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-custom-background">
+    <div className="flex flex-col items-center justify-center h-screen bg-custom-background ">
       <div className="flex justify-center items-center mb-20 text-red-500 text-5xl">
+        <Link to="/">
         <MdMovie />
+        </Link>
       </div>
 
       <div
-        className="w-96 bg-custom-gray from-gray-900 to-gray-700 p-8 rounded-2xl "
+        className="w-96 bg-custom-gray from-gray-900 to-gray-700 p-8 rounded-2xl bg-custom-gray"
         style={{ width: "450px" }}
       >
         <form onSubmit={handleSubmit} className="bg-custom-gray">
@@ -125,7 +129,7 @@ const LoginSignUp = () => {
             {isSignUp ? "Sign Up" : "Login"}
           </h1>
           <div
-            className={`focus-within:border-white relative w-full h-12 mb-8 border-b border-gray-600 transition-all ${
+            className={`focus-within:border-white relative w-full h-12 mb-8 border-b border-gray-600 bg-custom-gray transition-all ${
               errors.email ? "border-red-500" : ""
             }`}
           >
@@ -135,10 +139,10 @@ const LoginSignUp = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onFocus={handleInputFocus}
-              className="w-full h-full bg-transparent border-none outline-none ml-4 caret-red-500 text-white text-lg font-light pr-10"
+              className="w-full h-full bg-transparent border-none outline-none ml-4 caret-red-500 text-white text-lg font-light pr-10 bg-custom-gray"
             />
             {errors.email && (
-              <span className="text-red-500 absolute top-8 right-0 text-xs transform -translate-y-full ">
+              <span className="text-red-500 absolute top-8 right-0 text-xs transform -translate-y-full bg-custom-gray">
                 {errors.email}
               </span>
             )}
@@ -155,10 +159,10 @@ const LoginSignUp = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               onFocus={handleInputFocus}
-              className="w-full h-full bg-transparent border-none outline-none ml-4 caret-red-500 text-white text-lg font-light pr-10 "
+              className="w-full h-full bg-transparent border-none outline-none ml-4 caret-red-500 text-white text-lg font-light pr-10 bg-custom-gray"
             />
             {errors.password && (
-              <span className="text-red-500 absolute top-8 right-0 text-xs transform -translate-y-full">
+              <span className="text-red-500 absolute top-8 right-0 text-xs transform -translate-y-full bg-custom-gray">
                 {errors.password}
               </span>
             )}
@@ -166,7 +170,7 @@ const LoginSignUp = () => {
 
           {isSignUp && (
             <div
-              className={`focus-within:border-white relative w-full h-12 mb-8 border-b border-gray-600 transition-all ${
+              className={`focus-within:border-white relative w-full h-12 mb-8 border-b border-gray-600 bg-custom-gray transition-all ${
                 errors.repeatPassword ? "border-red-500" : ""
               }`}
             >
@@ -179,7 +183,7 @@ const LoginSignUp = () => {
                 className="w-full h-full bg-transparent border-none outline-none ml-4 caret-red-500 text-white text-lg font-light pr-10"
               />
               {errors.repeatPassword && (
-                <span className="text-red-500 absolute top-8 right-0 text-xs transform -translate-y-full ">
+                <span className="text-red-500 absolute top-8 right-0 text-xs transform -translate-y-full bg-custom-gray">
                   {errors.repeatPassword}
                 </span>
               )}
@@ -192,14 +196,14 @@ const LoginSignUp = () => {
           >
             {isSignUp ? "Create an account" : "Login to your account"}
           </button>
-          <div className="text-center text-white  mt-3 pb-1 text-md font-light">
-            <p className="mt-6">
+          <div className="text-center text-white  mt-3 pb-1 text-md font-light bg-custom-gray">
+            <p className="mt-6 bg-custom-gray">
               {isSignUp
                 ? "Already have an account? "
                 : "Don't have an account? "}
               <a
                 onClick={toggleForm}
-                className="text-red-500 no-underline cursor-pointer"
+                className="text-red-500 bg-custom-gray no-underline cursor-pointer"
               >
                 {isSignUp ? "Login" : "Sign Up"}
               </a>

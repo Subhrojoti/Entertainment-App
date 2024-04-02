@@ -16,7 +16,8 @@ function App() {
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/tvseries" element={<TvSeriesPage />} />
         <Route path="/detail/:movieid/:mediatype" element={<DetailsPage />} />
-        <Route path="/signup" element={<LoginSignUp />} />
+        <Route path="/signup" element={<LoginSignUp isSignUp={false} />} />
+        <Route path="/login" element={<LoginSignUp isSignUp={false} />} />
       </Routes>
     </>
   );
