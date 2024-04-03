@@ -6,21 +6,34 @@ import Card from "./Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { MdLocalMovies } from "react-icons/md";
+import { IoSearch } from "react-icons/io5";
+import Loader from "./Loader";
 
 const MoviesPage = () => {
   const API_Key = "&api_key=f69acf74b5c812b81e0ece6ad96116a1";
   const base_url = "https://api.themoviedb.org/3";
   const [moviesData, setMoviesData] = useState([]);
+  const [searchQuery, setSearchQuery] = React.useState("");
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const urlMovies = `${base_url}/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc${API_Key}`;
+    const urlForSearch = `${base_url}/search/movie?api_key=f69acf74b5c812b81e0ece6ad96116a1`;
 
     const getMovieData = async () => {
       try {
-        const { data } = await axios.get(urlMovies);
-        console.log(data);
+        const endpoints = searchQuery ? urlForSearch : urlMovies;
+
+        const { data } = await axios.get(endpoints, {
+          params: {
+            query: searchQuery,
+          },
+        });
+        // console.log(data);
         // Ensure that data.results exists and is an array before setting state
         if (data && data.results && Array.isArray(data.results)) {
           setMoviesData(data.results);
+          setLoading(false);
         } else {
           console.error("Unexpected response format:", data);
         }
@@ -29,36 +42,58 @@ const MoviesPage = () => {
       }
     };
     getMovieData();
-  }, []);
+  }, [searchQuery]);
 
   return (
-    <div className="moviesPage">
-      <div className="sideBar">
-        <SideBar />
-      </div>
-      <div className="mainContent">
-        <div className="searchBar">
-          <SearchBar placeholder="Search for movies" />
+    <>
+      <div className="moviesPage">
+        <div className="sideBar">
+          <SideBar />
         </div>
-        <div className="heading">Movies</div>
-        <div className="card-container">
-          {moviesData.map((items, i) => {
-            return (
-              <Card
-                key={i}
-                title={items.title}
-                poster={items.backdrop_path}
-                date={items.release_date}
-                logo={<MdLocalMovies />}
-                id={items.id}
-                type={items.type}
-                imdbId={items.imdb_id} // only this thing added nothing more
+        <div className="mainContent">
+          <div className="searchBar">
+            {/**----------------------------------------------------------------- */}
+            <div className="input-wrapper">
+              <IoSearch id="search-icon" />
+              <input
+                type="text"
+                placeholder="Search For Movies"
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  // console.log(e.target.value);
+                }}
               />
-            );
-          })}
+            </div>
+            {/**----------------------------------------------------------------- */}
+          </div>
+          {loading ? (
+            <div className="w-full flex items-center justify-center ml-28">
+              <Loader />
+            </div>
+          ) : (
+            <>
+              <div className="heading">Movies</div>
+              <div className="card-container">
+                {moviesData.map((items, i) => {
+                  return (
+                    <Card
+                      key={i}
+                      title={items.title}
+                      poster={items.backdrop_path}
+                      date={items.release_date}
+                      logo={<MdLocalMovies />}
+                      id={items.id}
+                      type={items.type}
+                      imdbId={items.imdb_id} // only this thing added nothing more
+                    />
+                  );
+                })}
+              </div>
+            </>
+          )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
