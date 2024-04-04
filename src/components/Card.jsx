@@ -15,7 +15,6 @@ const Card = ({ title, poster, date, name, logo, id, mediaType, type }) => {
   return (
     <>
       <div className={card.cardContainer}>
-        <Link to={`/detail/${id}/${movieType}`}>
           <div className={card.imageContainer}>
             {isBookmarked ? (
               <MdBookmark
@@ -30,6 +29,7 @@ const Card = ({ title, poster, date, name, logo, id, mediaType, type }) => {
             )}
             <img src={`https://image.tmdb.org/t/p/w500${poster}`} alt="img" />
           </div>
+          <Link to={`/detail/${id}/${movieType}`}>
           <div className={card.totalContent}>
             <div className={card.content}>
               <div className="year">
@@ -53,3 +53,5 @@ const Card = ({ title, poster, date, name, logo, id, mediaType, type }) => {
 };
 
 export default Card;
+
+
