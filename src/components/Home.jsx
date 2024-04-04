@@ -92,7 +92,7 @@ const Home = () => {
               placeholder="Search For Movie And Tv Series"
               onChange={(e) => {
                 setSearchQuery(e.target.value);
-                console.log(e.target.value);
+                // console.log(e.target.value);
               }}
             />
           </div>
