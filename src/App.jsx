@@ -7,6 +7,7 @@ import LoginSignUp from "./components/LoginSignUp";
 import { Routes, Route } from "react-router-dom";
 import MoviesPage from "./components/MoviesPage";
 import TvSeriesPage from "./components/TvSeriesPage";
+import BookMarkPage from "./components/BookMarkPage";
 function App() {
   return (
 
@@ -16,9 +17,9 @@ function App() {
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/tvseries" element={<TvSeriesPage />} />
         <Route path="/detail/:movieid/:mediatype" element={<DetailsPage />} />
+        <Route path="/bookmarks" element={<BookMarkPage />} />
         <Route path="/signup" element={<LoginSignUp isSignUp={true} />} />
         <Route path="/login" element={<LoginSignUp isSignUp={false} />} />
-        
       </Routes>
     </>
   );

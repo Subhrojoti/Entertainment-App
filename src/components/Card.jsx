@@ -46,6 +46,7 @@ const Card = ({
           <img src={posterImg} alt="img" />
         </div>
         <Link to={`/detail/${id}/${movieType}`}>
+
           <div className={card.totalContent}>
             <div className={card.content}>
               <div className="year">
@@ -69,3 +70,5 @@ const Card = ({
 };
 
 export default Card;
+
+
