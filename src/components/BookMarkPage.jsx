@@ -1,40 +1,3 @@
-// import React from 'react'
-// import SideBar from './SideBar'
-// import SearchBar from './SearchBar'
-
-// const BookMarkPage = () => {
-//   return (
-//     <div className="moviesPage">
-//     <div className="sideBar">
-//       <SideBar />
-//     </div>
-//     <div className="mainContent">
-//       <div className="searchBar w-screen">
-//         <SearchBar placeholder="Search for bookmarks"/>
-//       </div>
-//       <div className="heading">Bookmarks</div>
-
-
-//     <div>
-        
-//     </div>
-
-//       </div>
-//       </div>
-//   )
-// }
-
-// export default BookMarkPage;
-
-
-
-
-
-
-
-
-
-
 
 import React, { useState, useEffect } from 'react';
 import SideBar from './SideBar';
@@ -49,7 +12,6 @@ const BookMarkPage = () => {
 const toggleBookmark = (id) => {
   // Create a copy of the bookmarkedCards array
   const updatedBookmarkedCards = [...bookmarkedCards];
-  console.log(id)
   
   // Find the index of the card in the bookmarkedCards array
   const cardIndex = updatedBookmarkedCards.findIndex((card) => card.id === id);
@@ -64,6 +26,7 @@ const toggleBookmark = (id) => {
   
     // Update state with the updated bookmarkedCards array
     setBookmarkedCards(updatedBookmarkedCards);
+    
   }
 };
 
