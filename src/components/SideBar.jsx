@@ -42,7 +42,9 @@ const SideBar = () => {
         </li>
         <li>
           <div className="icon-wrapper">
+            <Link to="/bookmarks">
             <IoBookmark className="icon" />
+            </Link>
           </div>
         </li>
       </ul>

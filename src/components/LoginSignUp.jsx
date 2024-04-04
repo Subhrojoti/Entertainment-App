@@ -99,6 +99,7 @@ const LoginSignUp = () => {
             const data = await response.json();
             console.error("Login failed:", data.message);
             // Handle login error (e.g., display error message)
+            toast.error(data.message);
           }
         }
       } catch (error) {
