@@ -3,10 +3,26 @@ import demoPic from "../assets/demoPic.jpg";
 import { MdLocalMovies, MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import card from "../styles/card.module.css";
 import { Link } from "react-router-dom";
+import noImage from "../assets/noImage.jpg";
 
-const Card = ({ title, poster, date, name, logo, id, mediaType, type }) => {
+const Card = ({
+  title,
+  poster,
+  date,
+  name,
+  logo,
+  id,
+  mediaType,
+  type,
+  releaseData,
+}) => {
   const movieType = mediaType ? mediaType : type ? type : "movie";
+  const posterImg = poster
+    ? `https://image.tmdb.org/t/p/w500${poster}`
+    : noImage;
   const [isBookmarked, setIsBookmarked] = useState(false);
+
+  const realDate = date ? date : releaseData;
 
   const toggleBookmark = () => {
     setIsBookmarked(!isBookmarked);
@@ -15,25 +31,26 @@ const Card = ({ title, poster, date, name, logo, id, mediaType, type }) => {
   return (
     <>
       <div className={card.cardContainer}>
-          <div className={card.imageContainer}>
-            {isBookmarked ? (
-              <MdBookmark
-                className={card.bookmarkIcon}
-                onClick={toggleBookmark}
-              />
-            ) : (
-              <MdBookmarkBorder
-                className={card.bookmarkIcon}
-                onClick={toggleBookmark}
-              />
-            )}
-            <img src={`https://image.tmdb.org/t/p/w500${poster}`} alt="img" />
-          </div>
-          <Link to={`/detail/${id}/${movieType}`}>
+        <div className={card.imageContainer}>
+          {isBookmarked ? (
+            <MdBookmark
+              className={card.bookmarkIcon}
+              onClick={toggleBookmark}
+            />
+          ) : (
+            <MdBookmarkBorder
+              className={card.bookmarkIcon}
+              onClick={toggleBookmark}
+            />
+          )}
+          <img src={posterImg} alt="img" />
+        </div>
+        <Link to={`/detail/${id}/${movieType}`}>
+
           <div className={card.totalContent}>
             <div className={card.content}>
               <div className="year">
-                {date && date.slice(0, 4)}
+                {realDate && realDate.slice(0, 4)}
 
                 <span className={card.dot}>.</span>
               </div>

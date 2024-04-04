@@ -13,7 +13,9 @@ const SideBar = () => {
     <nav>
       <div className="logo">
         <div className="icon-wrapper">
-          <MdMovie className="icon" />
+          <Link to="/">
+            <MdMovie className="icon" />
+          </Link>
         </div>
       </div>
       <ul className="nav-icons">
