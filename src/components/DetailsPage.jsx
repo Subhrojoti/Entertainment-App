@@ -8,47 +8,56 @@ import axios from "axios";
 import Loader from "./Loader";
 
 const DetailsPage = () => {
+  // Get route parameters
   const params = useParams();
-  const [content, setContent] = useState({});
-  const [credits, setCredits] = useState([]); // pass the array to get the data
-  const [genres, setGenres] = useState([]); // pass the array to get the data
-  const [loading, setLoading] = useState(true);
 
+  // State variables
+  const [content, setContent] = useState({});
+  const [credits, setCredits] = useState([]); // Array to store cast data
+  const [genres, setGenres] = useState([]); // Array to store genre data
+  const [loading, setLoading] = useState(true); // Loading state
+
+  // Extract id and media type from parameters
   const id = params.movieid || "";
   const _media_type = params.mediatype || "";
 
+  // API key and base URL
   const API_Key = "&api_key=f69acf74b5c812b81e0ece6ad96116a1";
   const base_url = "https://api.themoviedb.org/3";
 
+  // Fetch data for content details
   const fetchData = async () => {
     try {
       const { data } = await axios.get(
         `${base_url}/${_media_type}/${id}?${API_Key}&language=en-US`
       );
       setContent(data);
-      setGenres(data.genres);
-      setLoading(false);
+      setGenres(data.genres); // Set genres
+      setLoading(false); // Set loading state to false
     } catch (error) {
       console.error(error);
     }
   };
 
+  // Fetch credits data
   const creditsFetch = async () => {
     try {
       const { data } = await axios.get(
         `${base_url}/${_media_type}/${id}/credits?${API_Key}`
       );
-      setCredits(data.cast);
+      setCredits(data.cast); // Set cast data
     } catch (error) {
       console.error(error);
     }
   };
 
+  // useEffect to fetch data on component mount or when id or media type changes
   useEffect(() => {
     fetchData();
     creditsFetch();
   }, [_media_type, id]);
 
+  // useEffect for testing purposes
   useEffect(
     () => {
       // For testing Data
@@ -56,15 +65,19 @@ const DetailsPage = () => {
       // console.log(credits);
       // console.log(genres);
     },
-    [content],
-    [credits],
-    [genres]
+    [content], // Watching content state for changes
+    [credits], // Watching credits state for changes
+    [genres] // Watching genres state for changes
   );
 
+  // Construct poster image URL
   const poster = `${content.poster_path}`;
   const img = `https://image.tmdb.org/t/p/w500${poster}`;
+
+  // Determine title based on media type
   const title = content.original_name || content.original_title;
 
+  // Array to hold movie info
   const movieInfo = [
     {
       category: "Length",
