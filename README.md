@@ -1,4 +1,4 @@
-## git repositry link : https://github.com/Subhrojoti/Entertainment-App
+
 
 # Bookmark Page :
 (Here I am facing Problem)
