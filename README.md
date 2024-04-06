@@ -61,19 +61,19 @@ Entertainment App is built using the following technologies:
 ## Project Summary
 The Entertainment App is designed to provide users with a platform to search for their favorite movies and TV series while also enabling them to bookmark their preferred content for easy access. Key features include:
 
-- ** ** Returning users can securely access the application, retaining access to their bookmarked items.
-- ** ** Dynamic Home page showcasing trending content
-- ** ** Dedicated pages for Movies and TV series
-- ** ** Personalized Bookmarks page for user content curation
-- ** ** User authentication via Sign Up and Login pages Technologies, tools, and frameworks used:
-- ** ** HTML, CSS, Tailwind CSS for frontend
-- ** ** React with Redux-toolkit for state management
-- ** ** Node.js with Express.js for backend
-- ** ** MongoDB for database management
-- ** ** TMDB API for fetching movie and TV series data Functionality:
-- ** ** Users can search for movies and TV series.
-- ** ** They can bookmark their favorite content for later viewing.
-- ** ** New users can sign up, optionally adding a profile image, while returning users can securely log in to access their bookmarks.
+- Returning users can securely access the application, retaining access to their bookmarked items.
+- Dynamic Home page showcasing trending content
+- Dedicated pages for Movies and TV series
+- Personalized Bookmarks page for user content curation
+- User authentication via Sign Up and Login pages Technologies, tools, and frameworks used:
+- HTML, CSS, Tailwind CSS for frontend
+- React with Redux-toolkit for state management
+- Node.js with Express.js for backend
+- MongoDB for database management
+- TMDB API for fetching movie and TV series data Functionality:
+- Users can search for movies and TV series.
+- They can bookmark their favorite content for later viewing.
+- New users can sign up, optionally adding a profile image, while returning users can securely log in to access their bookmarks.
 
 ## API Documentation:
 The API documentation includes:
