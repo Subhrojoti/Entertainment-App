@@ -81,7 +81,7 @@ The API documentation includes:
 - **Endpoints:** API endpoints for fetching movie and TV series data, user authentication, and bookmark management.
 - **Request/Response Examples:** Examples of API requests and corresponding responses.
 - **Authentication Methods:** Explanation of authentication mechanisms, such as JWT tokens.
-- ** **Sample code snippets may be provided for clarity.
+- Sample code snippets may be provided for clarity.
 
 
 ## Database Design:
