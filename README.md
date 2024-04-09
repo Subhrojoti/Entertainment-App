@@ -1,6 +1,6 @@
 <h1 align="center"> ENTERTAINMENT APP <h1>
 <p align="center">A Comprehensive MERN Stack Solution for Movie and TV Series Enthusiasts</p>
-
+  
 <h2 align='center'>
 <a href='https://flashcard-generator-c2s3.vercel.app/' target="_blank">Explore the World of Entertainment (To be changed)
 </a>
