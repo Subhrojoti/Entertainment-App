@@ -11,28 +11,34 @@ import { PiTelevision } from "react-icons/pi";
 import Loader from "./Loader";
 
 const Home = () => {
+  // Function to slide the carousel left
   const slideLeft = () => {
     var slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft - 500;
   };
+
+  // Function to slide the carousel right
   const slideRight = () => {
     var slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft + 500;
   };
 
+  // API key and base URL for TMDb
   const API_Key = "&api_key=f69acf74b5c812b81e0ece6ad96116a1";
   const base_url = "https://api.themoviedb.org/3";
+
+  // State variables
   const [moviesData, setMoviesData] = useState([]);
   const [trendingData, setTrendingData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Fetch trending data on component mount
   useEffect(() => {
     const urlForTrending = `${base_url}/trending/all/day?language=en-US${API_Key}`;
 
     const getTrendingData = async () => {
       try {
         const { data } = await axios.get(urlForTrending);
-        // console.log(data);
 
         // Ensure that data.results exists and is an array before setting state
         if (data && data.results && Array.isArray(data.results)) {
@@ -41,21 +47,24 @@ const Home = () => {
           console.error("Unexpected response format:", data);
         }
       } catch (error) {
-        console.error("Error fetching movie data:", error);
+        console.error("Error fetching trending data:", error);
       }
     };
     getTrendingData();
   }, []);
 
+  // State variable and effect for search query
   const [searchQuery, setSearchQuery] = React.useState("");
 
   useEffect(() => {
-    const urlRecomendedForYou = `${base_url}/movie/top_rated?language=en-US&page=1${API_Key}`;
+    // URLs for recommended movies and TV shows and search
+    const urlRecommendedForYou = `${base_url}/movie/top_rated?language=en-US&page=1${API_Key}`;
     const urlForSearch = `${base_url}/search/multi?api_key=f69acf74b5c812b81e0ece6ad96116a1`;
 
+    // Function to fetch recommended data
     const getRecData = async () => {
       try {
-        const endpoints = searchQuery ? urlForSearch : urlRecomendedForYou;
+        const endpoints = searchQuery ? urlForSearch : urlRecommendedForYou;
 
         const { data } = await axios.get(endpoints, {
           params: {
@@ -64,7 +73,6 @@ const Home = () => {
         });
         setLoading(false);
 
-        // console.log(data);
         // Ensure that data.results exists and is an array before setting state
         if (data && data.results && Array.isArray(data.results)) {
           setMoviesData(data.results);
@@ -78,6 +86,7 @@ const Home = () => {
     getRecData();
   }, [searchQuery]);
 
+  // JSX
   return (
     <div className={home.main}>
       <section className={home.sideBar}>
@@ -92,7 +101,6 @@ const Home = () => {
               placeholder="Search For Movie And Tv Series"
               onChange={(e) => {
                 setSearchQuery(e.target.value);
-                // console.log(e.target.value);
               }}
             />
           </div>
@@ -168,6 +176,7 @@ const Home = () => {
                         mediaType={items.media_type}
                         id={items.id}
                         type={items.type}
+                        typeName="Movie"
                       />
                     </div>
                   );
