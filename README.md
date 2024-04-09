@@ -1,122 +1,208 @@
+<h1 align="center"> ENTERTAINMENT APP <h1>
+<p align="center">A Comprehensive MERN Stack Solution for Movie and TV Series Enthusiasts</p>
+  
+<h2 align='center'>
+<a href='https://flashcard-generator-c2s3.vercel.app/' target="_blank">Explore the World of Entertainment (To be changed)
+</a>
+</h2>
+
+## Team Members
+<h4>Rahul Dey</h4>
+<h4>Subhrojoti Nag</h4>
 
 
-# Bookmark Page :
-(Here I am facing Problem)
-I'm encountering difficulties with implementing the bookmark functionality in my application. The goal is to allow users to save their favorite movies or TV shows locally and have them displayed in a bookmark section for easy access later. However, despite implementing the logic to save the card data to local storage and display it in the bookmark section, it's not functioning as expected.
+## Table of Contents
 
-In the application, each card representing a movie or TV show includes a bookmark icon. When clicked, it's supposed to trigger an event to save the corresponding card data to local storage. Additionally, the bookmarked cards should be rendered in a bookmark section for the user to view later.
+- [Introduction ](#introduction)
+- [Features ](#features)
+- [Tech Stack ](#tech-stack)
+- [Installation & Run](#installation-and-run)
+- [Contribute ](#contribute)
+- [Contributors ](#contributors)
+- [License ](#license)
+- [Contact ](#contact)
+- [Acknowledgment ](#acknowledgment)
 
-I've ensured that the bookmark icon's onClick event handler correctly triggers the function responsible for saving the card data to local storage. However, upon inspection, it seems that the data isn't being stored properly, or there might be an issue with retrieving the saved data and rendering it in the bookmark section.
+## Introduction
+The Entertainment App allows users to search for their preferred movies or TV series and provides the added functionality of bookmarking their favorites. It features a dynamic Home page, dedicated pages for Movies and TV series, a Bookmarks page for personalized content curation, as well as Sign Up and Login pages for user authentication.
 
-I've reviewed the implementation multiple times and can't seem to identify the root cause of the problem. I suspect there might be an error in how the data is formatted before saving it to local storage or how it's retrieved and displayed in the bookmark section.
-
-What i have done in my bookmark Page (Description):
-
-State Management: It utilizes React's useState hook to manage the state of bookmarked cards (bookmarkedCards).
-
-Bookmark Toggle Functionality: The toggleBookmark function allows users to toggle the bookmark status of a card by updating its isBookmarked property. This function is triggered when a user interacts with the bookmark icon on a card.
-
-Local Storage Integration: The component utilizes React's useEffect hook to synchronize the state of bookmarked cards with the browser's local storage. Whenever the bookmarkedCards state changes, it updates the local storage with the latest data.
-
-Rendering Bookmarked Cards: It renders the bookmarked cards in the card-container section, iterating over the bookmarkedCards array and rendering a Card component for each card. The toggleBookmark function is passed down to each Card component to enable bookmark toggling.
-
-# CardComponent:
-
-Card component represents a reusable card UI element used to display information about movies or TV shows. 
-It includes features such as displaying the poster image, title, release date, and bookmarking functionality.
-The component utilizes React icons for bookmarking, CSS modules for styling, and the Link component 
-from react-router-dom for navigation to detailed information pages. It also includes placeholder images for 
-cases where the poster image is not available. The component is highly configurable, accepting various props 
-such as title, poster URL, release date, media type, and more, to adapt to different data sources and use cases.
+![Entertainment App](https://github.com/RahulDey25/flashcard_generator/blob/main/src/Assets/GIF.gif) (To be changed)
 
 
-# Movie Details Page Component:
+## Features
+The application offers several notable features:
 
-This React component which displays detailed information about movies or TV shows. 
-It fetches data from The Movie Database (TMDb) API, including title, poster, rating, length, genres, synopsis, 
-cast, and external links like IMDb and the movie's homepage.
+- **Home Page:** The Home page serves as the central hub, showcasing recent and trending movies and TV series. Users can explore captivating content through an organized grid system.
 
+- **Movies Page:** The Movies Page offers a diverse collection of films across various genres, catering to different preferences.
 
-# Home Component:
+- **TV Series Page:** The TV Series Page presents an extensive selection of television shows spanning different genres.
 
-The Home component represents the main page of a movie and TV show browsing application. 
-It consists of a sidebar, a search bar, and sections for displaying trending content and recommended 
-movies or TV shows. The component utilizes data fetched from The Movie Database (TMDb) API to populate
-these sections dynamically.
+- **Bookmarks Page:** The Bookmarks page allows users to curate their own entertainment library by adding or removing bookmarked movies and TV series.
 
-Features:
-Trending Section: Displays trending movies and TV shows fetched from TMDb API, allowing users to scroll through them horizontally.
-Recommended Section: Shows recommended movies or TV shows based on user preferences or a default list if no search query is provided.
-Search Bar: Enables users to search for movies and TV shows by title or keywords.
-Responsive Design: The component is designed to adapt to different screen sizes and devices for a seamless user experience.
-Technologies Used:
-React: The component is built using React, a popular JavaScript library for building user interfaces.
-Axios: Axios is used for making HTTP requests to fetch data from the TMDb API.
-React Icons: Various icons from React Icons library are utilized for visual elements.
-CSS Modules: CSS Modules are employed for modular CSS styling, ensuring encapsulation and maintainability.
+- **Sign Up Page:** Aspiring users can register using a form, with an optional profile image inclusion.
+
+- **Login Page:** Returning users can securely access the application, retaining access to their bookmarked items.
 
 
+## Tech Stack
+Entertainment App is built using the following technologies:
 
-# LoginSignUp Component:
+- **HTML:** Hypertext Markup Language, the standard markup language for creating web pages and web applications. It structures the content of web pages using elements and tags.
+- **CSS:** Cascading Style Sheets, a style sheet language used to define the presentation of HTML and XML documents. It controls the layout, design, and appearance of web pages.
+- **Tailwind CSS:** A utility-first CSS framework that provides a set of pre-designed utility classes to quickly build custom designs without writing custom CSS.
+- **React:**  A JavaScript library for building user interfaces, developed by Facebook. It allows developers to create reusable UI components and manage the state of complex applications efficiently.
+- **Redux-toolkit:** An official, opinionated toolset for efficient Redux development, designed to simplify the process of writing Redux logic, such as actions, reducers, and selectors.
+- **Node.js:** A JavaScript runtime environment that allows developers to run JavaScript code server-side. It provides an event-driven architecture and asynchronous I/O for building scalable and high-performance applications.
+- **Express.js:** A minimalist web application framework for Node.js, designed for building web servers and APIs. It simplifies the process of handling HTTP requests, routing, and middleware integration.
+- **MongoDB:** A NoSQL database that stores data in flexible, JSON-like documents. It offers high scalability, flexibility, and performance, making it suitable for handling large volumes of data in modern web applications.
+- **TMDB API:** The Movie Database API, a free and open API that provides access to a vast collection of movie and TV series data. It allows developers to fetch information about movies, TV shows, actors, and more for integration into their applications.
 
-The LoginSignUp component represents a login and sign-up form for users of a movie browsing application. 
-It allows users to either sign up for a new account or log in to an existing one. 
-The component utilizes React state to manage form inputs, errors, and form submission.
- Additionally, it integrates with the React Router library to enable navigation between different pages 
-of the application.
+## Project Summary
+The Entertainment App is designed to provide users with a platform to search for their favorite movies and TV series while also enabling them to bookmark their preferred content for easy access. Key features include:
 
-The key features of the LoginSignUp component include:
+- Returning users can securely access the application, retaining access to their bookmarked items.
+- Dynamic Home page showcasing trending content
+- Dedicated pages for Movies and TV series
+- Personalized Bookmarks page for user content curation
+- User authentication via Sign Up and Login pages Technologies, tools, and frameworks used:
+- HTML, CSS, Tailwind CSS for frontend
+- React with Redux-toolkit for state management
+- Node.js with Express.js for backend
+- MongoDB for database management
+- TMDB API for fetching movie and TV series data Functionality:
+- Users can search for movies and TV series.
+- They can bookmark their favorite content for later viewing.
+- New users can sign up, optionally adding a profile image, while returning users can securely log in to access their bookmarks.
 
-Sign-Up and Login Forms: Users can toggle between sign-up and login forms to create a new account or access an existing one.
+## API Documentation:
+The API documentation includes:
 
-Form Validation: Input fields for email, password, and repeat password (for sign-up) are validated to ensure correct input format and length.
+- **Endpoints:** API endpoints for fetching movie and TV series data, user authentication, and bookmark management.
+- **Request/Response Examples:** Examples of API requests and corresponding responses.
+- **Authentication Methods:** Explanation of authentication mechanisms, such as JWT tokens.
+- Sample code snippets may be provided for clarity.
 
-Error Handling: Errors are displayed to users if input validation fails or if there are issues with submitting the form data.
 
-API Integration: The component interacts with a backend server using HTTP requests (POST) to handle sign-up and login actions.
+## Database Design:
+The database design includes:
 
-Toast Notifications: Success and error messages are displayed using toast notifications from the react-toastify library, providing feedback to users about the outcome of their actions.
+- **Overview of Schema:** Description of the database schema, including tables and relationships.
+- **ER Diagram:** Visual representation of the database schema for clarity.
+- **Entities and Attributes:** Explanation of entities and their attributes for better understanding of data structure.
 
-# MoviePage Component:
+## Best Practices:
+Implemented best practices in the project include:
 
-The MoviesPage component is a React component that represents a page dedicated to displaying movies
-in a movie browsing application. It includes functionality for searching movies, rendering movie cards 
-with relevant information, and integrating with external APIs to fetch movie data.
-
-Key Features:
-Search Functionality: Users can search for movies using a search bar located at the top of the page. 
-The component dynamically updates the displayed movies based on the user's search query.
-
-Movie Cards: Movies are displayed as cards containing key information such as title, release date, and poster image. Each card provides a visual representation of the movie and includes a link or action to view more details about the movie.
-
-API Integration: The component integrates with The Movie Database (TMDb) API to fetch movie data. It makes HTTP requests to retrieve information about movies, including details like title, release date, and poster image.
-
-Loading Indicator: While movie data is being fetched from the API, a loading indicator is displayed to provide feedback to the user. This ensures a smooth user experience by indicating that data is being loaded.
-
-Technologies Used:
-React: The component is built using React, a JavaScript library for building user interfaces. React enables the creation of reusable UI components and facilitates efficient updates to the DOM.
-
-Axios: Axios is used to make HTTP requests from the client-side React application to the TMDb API. It provides a simple and concise API for sending asynchronous HTTP requests.
-
-React Icons: Icons from the React Icons library are utilized to enhance the visual representation of elements such as search icons.
-
-CSS Styling: CSS stylesheets are used to apply custom styles to the component, ensuring a visually appealing layout and design.
+1.	Modular code structure for maintainability.
+2.	Input validation to prevent security vulnerabilities.
+3.	Proper error handling to enhance user experience.
+4.	Use of environment variables for sensitive data protection.
+5.	Implementation of JWT for secure authentication.
+6.	Data encryption for protecting user information.
+7.	Code commenting for readability and easier collaboration.
+8.	Regular code reviews to ensure code quality.
+9.	Version control with Git for efficient team collaboration.
+10.	Continuous integration and deployment for automated testing and deployment processes.
 
 
 
-# TvSeriesPage :
+## Installation and Run
+1. Clone the repository from GitHub:
+    ```
+     git clone https://github.com/RahulDey25/flashcard_generator(To be changed)
+    ```
+2. Redirect to the project folder:
+    ```
+     cd Entertainment App (For UI)
+     cd backend (For backend server)
+    ```
+3. Install the required dependencies:
+    ```
+     npm install
+    ```
 
-The TvSeriesPage component represents a page in a React application dedicated to displaying TV series. 
-It leverages the TMDB API to fetch data about popular TV series or to perform searches based on user input. 
-The component features a sidebar for navigation, a search bar for filtering TV series, and a main content 
-area where TV series cards are displayed.
-
-When the page loads, it fetches data about popular TV series from the TMDB API. If the user performs a search, 
-the component updates the displayed TV series based on the search query. A loading spinner is shown 
-while the data is being fetched to provide feedback to the user.
-
-Each TV series is represented by a card component, which includes details such as 
-the title, poster image, release date, and a television icon. 
-These cards are dynamically rendered based on the fetched data.
+4. Start server:
+    ```
+     npm start
+    ```
+    > [!NOTE]
+    > Access the  application in your web browser at `http://localhost:5173` (base URL)
 
 
+
+## Contribute
+Contributions are welcome! If you'd like to contribute, please follow our [Contribution Guidelines](CONTRIBUTING.md).
+
+## License
+This project is Distributed under the ISC License. See [LICENSE](./LICENSE.txt) for more information.
+
+# Getting Started with Create React Vite App
+
+This project was initialized with [Create-React-Vite-App](https://vitejs.dev/), a next-generation frontend tooling for React development.
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+
+## Learn More
+
+You can learn more in the [Create React Vite App documentation](https://vitejs.dev/guide/).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Happy Learning
