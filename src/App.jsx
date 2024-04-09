@@ -1,17 +1,19 @@
-
+// Import necessary modules and components
 import React from "react";
-import "./App.css";
-import Home from "./components/Home";
-import DetailsPage from "./components/DetailsPage";
-import LoginSignUp from "./components/LoginSignUp";
-import { Routes, Route } from "react-router-dom";
-import MoviesPage from "./components/MoviesPage";
-import TvSeriesPage from "./components/TvSeriesPage";
-import BookMarkPage from "./components/BookMarkPage";
+import "./App.css"; // Import CSS file for styling
+import Home from "./components/Home"; // Import Home component
+import DetailsPage from "./components/DetailsPage"; // Import DetailsPage component
+import LoginSignUp from "./components/LoginSignUp"; // Import LoginSignUp component
+import { Routes, Route } from "react-router-dom"; // Import Routes and Route components for routing
+import MoviesPage from "./components/MoviesPage"; // Import MoviesPage component
+import TvSeriesPage from "./components/TvSeriesPage"; // Import TvSeriesPage component
+import BookMarkPage from "./components/BookMarkPage"; // Import BookMarkPage component
+
+// Main App component
 function App() {
   return (
-
     <>
+      {/* Define routing for different pages */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<MoviesPage />} />
@@ -25,4 +27,5 @@ function App() {
   );
 }
 
+// Export the App component as default
 export default App;

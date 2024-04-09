@@ -1,24 +1,28 @@
+// Import necessary modules from React and external libraries
 import React, { useState } from "react";
-import { MdMovie } from "react-icons/md";
-import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { MdMovie } from "react-icons/md"; // Icon component
+import { ToastContainer, toast } from "react-toastify"; // Notification component
+import "react-toastify/dist/ReactToastify.css"; // Notification styles
 
+// Functional component for Login/Sign-up form
 const LoginSignUp = () => {
-  const [isSignUp, setIsSignUp] = useState(true);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
-  const [errors, setErrors] = useState({});
+  // State variables for managing form fields and errors
+  const [isSignUp, setIsSignUp] = useState(true); // Flag for switching between Login and Sign-up
+  const [email, setEmail] = useState(""); // Email input field value
+  const [password, setPassword] = useState(""); // Password input field value
+  const [repeatPassword, setRepeatPassword] = useState(""); // Repeat password input field value (only for sign-up)
+  const [errors, setErrors] = useState({}); // Object to store form validation errors
 
+  // Function to toggle between Login and Sign-up forms
   const toggleForm = () => {
     setIsSignUp(!isSignUp);
     setErrors({}); // Reset errors when toggling form
   };
 
+  // Function to handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const newErrors = {};
+    e.preventDefault(); // Prevent default form submission behavior
+    const newErrors = {}; // Object to store new validation errors
 
     // Email validation
     if (!email.trim()) {
@@ -41,15 +45,17 @@ const LoginSignUp = () => {
       newErrors.repeatPassword = "Passwords do not match";
     }
 
-    setErrors(newErrors);
+    setErrors(newErrors); // Update errors state with new validation errors
 
+    // If there are no validation errors, proceed with form submission
     if (Object.keys(newErrors).length === 0) {
       try {
         console.log("Sending data:", { email, password });
 
+        // Perform different actions based on whether it's a Sign-up or Login form submission
         if (isSignUp) {
           // Make POST request to signup endpoint
-          const response = await fetch("http://localhost:5000/signup", {
+          const response = await fetch("https://entertainment-app-g72j.onrender.com/signup", {
             // Update URL here
             method: "POST",
             headers: {
@@ -76,7 +82,7 @@ const LoginSignUp = () => {
           }
         } else {
           // Make POST request to login endpoint
-          const response = await fetch("http://localhost:5000/login", {
+          const response = await fetch("https://entertainment-app-g72j.onrender.com/login", {
             // Update URL here
             method: "POST",
             headers: {
@@ -111,6 +117,7 @@ const LoginSignUp = () => {
     setErrors({});
   };
 
+  // JSX for rendering the Login/Sign-up form
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-custom-background ">
       <div className="flex justify-center items-center mb-20 text-red-500 text-5xl">
@@ -224,4 +231,5 @@ const LoginSignUp = () => {
   );
 };
 
+// Export the LoginSignUp component as default
 export default LoginSignUp;

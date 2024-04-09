@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import detailsPic from "../assets/details.jpg";
 import Stars from "./Stars";
 import { FaLink } from "react-icons/fa";
 import { FaImdb } from "react-icons/fa";

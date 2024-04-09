@@ -1,5 +1,4 @@
 import React from "react";
-import SearchBar from "./SearchBar";
 import SideBar from "./SideBar";
 import "../styles/moviesPage.css";
 import Card from "./Card";
