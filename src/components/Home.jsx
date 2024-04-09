@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import home from "../styles/home.module.css";
 import Card from "./Card";
-import SearchBar from "./SearchBar";
 import SideBar from "./SideBar";
 import TrendingCard from "./TrendingCard";
 import { MdChevronLeft, MdChevronRight, MdLocalMovies } from "react-icons/md";
