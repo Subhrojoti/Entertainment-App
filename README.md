@@ -2,7 +2,7 @@
 <p align="center">A Comprehensive MERN Stack Solution for Movie and TV Series Enthusiasts</p>
   
 <h2 align='center'>
-<a href='https://flashcard-generator-c2s3.vercel.app/' target="_blank">Explore the World of Entertainment (To be changed)
+<a href='https://flashcard-generator-c2s3.vercel.app/' target="_blank">Explore the World of Entertainment 
 </a>
 </h2>
 
@@ -26,7 +26,7 @@
 ## Introduction
 The Entertainment App allows users to search for their preferred movies or TV series and provides the added functionality of bookmarking their favorites. It features a dynamic Home page, dedicated pages for Movies and TV series, a Bookmarks page for personalized content curation, as well as Sign Up and Login pages for user authentication.
 
-![Entertainment App](https://github.com/RahulDey25/flashcard_generator/blob/main/src/Assets/GIF.gif) (To be changed)
+![Entertainment App](https://github.com/Subhrojoti/Entertainment-App/blob/main/src/assets/demo.gif) 
 
 
 ## Features
@@ -110,7 +110,7 @@ Implemented best practices in the project include:
 ## Installation and Run
 1. Clone the repository from GitHub:
     ```
-     git clone https://github.com/RahulDey25/flashcard_generator(To be changed)
+     git clone https://github.com/Subhrojoti/Entertainment-App.git
     ```
 2. Redirect to the project folder:
     ```
