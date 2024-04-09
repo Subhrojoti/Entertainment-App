@@ -107,9 +107,6 @@ Implemented best practices in the project include:
 
 
 
-
-
-
 ## Installation and Run
 1. Clone the repository from GitHub:
     ```
@@ -139,8 +136,6 @@ Contributions are welcome! If you'd like to contribute, please follow our [Contr
 
 ## License
 This project is Distributed under the ISC License. See [LICENSE](./LICENSE.txt) for more information.
-
-## Happy Learning
 
 # Getting Started with Create React Vite App
 
@@ -202,6 +197,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/m
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
+
+## Happy Learning
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
