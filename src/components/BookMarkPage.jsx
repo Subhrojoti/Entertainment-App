@@ -1,60 +1,85 @@
-
-import React, { useState, useEffect } from 'react';
-import SideBar from './SideBar';
-import SearchBar from './SearchBar';
-import Card from './Card';
+import React from "react";
+import SideBar from "./SideBar";
+import SearchBar from "./SearchBar";
+import Card from "./Card";
+import { MdLocalMovies } from "react-icons/md";
+import { PiTelevision } from "react-icons/pi";
 
 const BookMarkPage = () => {
-  // State to store bookmarked cards
-  const [bookmarkedCards, setBookmarkedCards] = useState([]);
-
-// Function to toggle bookmark status
-const toggleBookmark = (id) => {
-  // Create a copy of the bookmarkedCards array
-  const updatedBookmarkedCards = [...bookmarkedCards];
-  
-  // Find the index of the card in the bookmarkedCards array
-  const cardIndex = updatedBookmarkedCards.findIndex((card) => card.id === id);
-  console.log(id)
-  // If the card is found
-  if (cardIndex !== -1) {
-    // Toggle the isBookmarked property of the card at the specified index
-    updatedBookmarkedCards[cardIndex] = {
-      ...updatedBookmarkedCards[cardIndex],
-      isBookmarked: !updatedBookmarkedCards[cardIndex].isBookmarked
-    };
-  
-    // Update state with the updated bookmarkedCards array
-    setBookmarkedCards(updatedBookmarkedCards);
-    
-  }
-};
-
-// Update localStorage with the updated bookmarked cards after state update
-useEffect(() => {
-  localStorage.setItem('bookmarkedCards', JSON.stringify(bookmarkedCards));
-  console.log(bookmarkedCards)
-}, [bookmarkedCards]);
-
   return (
-    <div className="moviesPage">
-      <div className="sideBar">
+    <div className="bookMark-main flex h-screen">
+      <div className="sidebar w-32 mt-[2rem] ml-[2rem] ">
         <SideBar />
       </div>
-      <div className="mainContent">
-        <div className="searchBar w-screen">
-          <SearchBar placeholder="Search for bookmarks" />
+      <div className="content w-full mt-[3rem]">
+        <div className="srcBar">
+          <SearchBar placeholder="Search For Bookamrk Shows" />
         </div>
-        <div className="heading">Bookmarks</div>
-        <div className="card-container">
-          {bookmarkedCards.map((card, index) => (
-              <Card
-              key={index}
-              {...card} // Spread the card props
-              toggleBookmark={() => toggleBookmark(card.id)} // Pass the toggleBookmark function with card id
-              isBookmarked={card.isBookmarked} // Pass the isBookmarked state
-            />
-          ))}
+        <div
+          style={{
+            fontFamily: "jost",
+            fontWeight: "400",
+            fontSize: "30px",
+            color: "#ededee",
+          }}
+          className="mt-[2rem] mb-[1rem]"
+        >
+          BookMarked Movies
+        </div>
+        <div className="bookmarkCard flex flex-wrap gap-[2rem] mt-[2rem]">
+          <Card
+            title="3 idiots"
+            date="2009"
+            typeName="Movie"
+            logo={<MdLocalMovies />}
+            poster="https://image.tmdb.org/t/p/w500/u7kuUaySqXBVAtqEl9vkTkAzHV9.jpg"
+            bookmark="false"
+          />
+          <Card
+            title="Interstellar"
+            date="2014"
+            typeName="Movie"
+            logo={<MdLocalMovies />}
+            poster="https://image.tmdb.org/t/p/w500/xJHokMbljvjADYdit5fK5VQsXEG.jpg"
+            bookmark="false"
+          />
+        </div>
+        <div
+          style={{
+            fontFamily: "jost",
+            fontWeight: "400",
+            fontSize: "30px",
+            color: "#ededee",
+          }}
+          className="mt-[2rem] mb-[1rem]"
+        >
+          BookMarked TvSeries
+        </div>
+        <div className="bookmarkCard flex flex-wrap gap-[2rem] mt-[2rem]">
+          <Card
+            title="Dragon Ball Z"
+            date="1989"
+            typeName="TvSeries"
+            logo={<PiTelevision />}
+            poster="https://image.tmdb.org/t/p/w500/ydf1CeiBLfdxiyNTpskM0802TKl.jpg"
+            bookmark="false"
+          />
+          <Card
+            title="The Great Kapil Sharma Show"
+            date="2024"
+            typeName="TvSeries"
+            logo={<PiTelevision />}
+            poster="https://image.tmdb.org/t/p/w500/5nEC6LXJt11jscs2iCFub8oFPqj.jpg"
+            bookmark="false"
+          />
+          <Card
+            title="Shark Tank India"
+            date="2021"
+            typeName="TvSeries"
+            logo={<PiTelevision />}
+            poster="https://image.tmdb.org/t/p/w500/tLL91JBiCCvBF7oKSN6dFR7yd8c.jpg"
+            bookmark="false"
+          />
         </div>
       </div>
     </div>

@@ -88,6 +88,7 @@ const MoviesPage = () => {
                       id={items.id}
                       type={items.type}
                       imdbId={items.imdb_id} // IMDb ID added
+                      typeName="Movie"
                     />
                   );
                 })}
