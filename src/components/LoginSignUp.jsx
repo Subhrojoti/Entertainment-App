@@ -55,7 +55,7 @@ const LoginSignUp = () => {
         // Perform different actions based on whether it's a Sign-up or Login form submission
         if (isSignUp) {
           // Make POST request to signup endpoint
-          const response = await fetch("http://localhost:5000/signup", {
+          const response = await fetch("https://entertainment-app-g72j.onrender.com/signup", {
             // Update URL here
             method: "POST",
             headers: {
@@ -82,7 +82,7 @@ const LoginSignUp = () => {
           }
         } else {
           // Make POST request to login endpoint
-          const response = await fetch("http://localhost:5000/login", {
+          const response = await fetch("https://entertainment-app-g72j.onrender.com/login", {
             // Update URL here
             method: "POST",
             headers: {
