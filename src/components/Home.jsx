@@ -176,6 +176,7 @@ const Home = () => {
                         mediaType={items.media_type}
                         id={items.id}
                         type={items.type}
+                        typeName="Movie"
                       />
                     </div>
                   );

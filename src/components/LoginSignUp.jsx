@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
-
 const LoginSignUp = () => {
   const [isSignUp, setIsSignUp] = useState(true);
   const [email, setEmail] = useState("");
@@ -94,7 +92,7 @@ const LoginSignUp = () => {
             setEmail("");
             setPassword("");
             // Handle successful login (e.g., redirect user)
-            window.location.href = "/"; 
+            window.location.href = "/";
           } else {
             const data = await response.json();
             console.error("Login failed:", data.message);
@@ -116,9 +114,7 @@ const LoginSignUp = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-custom-background ">
       <div className="flex justify-center items-center mb-20 text-red-500 text-5xl">
-        <Link to="/">
         <MdMovie />
-        </Link>
       </div>
 
       <div

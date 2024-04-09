@@ -28,6 +28,9 @@ const Card = ({
   mediaType,
   type,
   releaseData,
+  staticImg,
+  typeName,
+  bookmark,
 }) => {
   // Determine the type of media (movie or TV show)
   const movieType = mediaType ? mediaType : type ? type : "movie";
@@ -35,10 +38,12 @@ const Card = ({
   // Prepare the poster image URL
   const posterImg = poster
     ? `https://image.tmdb.org/t/p/w500${poster}`
-    : noImage;
+    : noImage
+    ? noImage
+    : staticImg;
 
   // State for bookmarking functionality
-  const [isBookmarked, setIsBookmarked] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(bookmark);
 
   // Format the date
   const realDate = date ? date : releaseData;
@@ -80,7 +85,8 @@ const Card = ({
               <div className={card.dynamicIcon}>{logo}</div>
               {/* Display the type of media */}
               <div className="icon-type">
-                <span className={card.dot}>.</span>Movie
+                <span className={card.dot}>.</span>
+                {typeName}
                 <span className={card.dot}>.</span>
               </div>
               {/* Placeholder for the rating or classification */}

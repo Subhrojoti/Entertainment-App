@@ -110,6 +110,7 @@ const TvSeriesPage = () => {
                     id={items.id}
                     type="tv"
                     releaseData={items.release_date}
+                    typeName="TvSeries"
                   />
                 );
               })}
