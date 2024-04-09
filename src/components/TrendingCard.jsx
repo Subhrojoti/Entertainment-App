@@ -1,6 +1,5 @@
 import React from "react";
 import trendingCardcss from "../styles/trendingCard.module.css";
-import demoPic from "../assets/demoPic.jpg";
 import { MdLocalMovies } from "react-icons/md";
 import { FaCirclePlay } from "react-icons/fa6";
 import { PiTelevision } from "react-icons/pi";

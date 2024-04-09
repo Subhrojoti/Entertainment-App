@@ -1,13 +1,16 @@
+/* Apply styles from Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Reset default margin, padding, and box-sizing for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Style for input elements */
 input {
   background-color: rgba(2, 2, 2, 0);
 }
